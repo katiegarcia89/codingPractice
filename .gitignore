@@ -1,0 +1,35 @@
+# macOS system files
+.DS_Store
+**/.DS_Store
+__MACOSX/
+
+# Microsoft Office temporary files
+~$*.docx
+
+# Compiled Java files
+*.class
+
+# Compiled C++ programs
+**/codingPractice
+*.out
+*.exe
+
+# C# and .NET build folders
+bin/
+obj/
+.vs/
+
+# Python-generated files
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.iml
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
