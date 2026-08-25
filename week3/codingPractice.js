@@ -130,33 +130,33 @@ console.log(validAnagram3("rat", "car")); // false)
 //   approach has a time complexity of `O(n)`.
 console.log(" Reviewing day 1 ");
 function maybeAnagram(s, t) {
-    if(s.length != t.length){return false;}
+    if (s.length != t.length) { return false; }
     let counts = {};
     for (let i = 0; i < s.length; i++) {
         let letters = s[i];
-        if ((counts[letters]) ===undefined){
-            counts[letters] = 1; 
+        if ((counts[letters]) === undefined) {
+            counts[letters] = 1;
         }
-        else {(counts[letters])+=1; }
+        else { (counts[letters]) += 1; }
     }
-    for(let j = 0 ; j <t.length; t ++){
-        let letters = t[j]; 
-        if ((counts[letters])===undefined || (counts[letters])===0){
-            return false; 
+    for (let j = 0; j < t.length; t++) {
+        let letters = t[j];
+        if ((counts[letters]) === undefined || (counts[letters]) === 0) {
+            return false;
 
         }
-        counts[letters]--; 
+        counts[letters]--;
     }
-    return true; 
+    return true;
 
 }
 console.log(maybeAnagram("cats", "tacs")); //true
 console.log(maybeAnagram("tacos", "five")); //false
 
-function shortAnagram(s,t){
+function shortAnagram(s, t) {
     let sortedS = s.split('').sort().join('');
-    let sortedT = t.split('').sort().join(''); 
-    return sortedS === sortedT; 
+    let sortedT = t.split('').sort().join('');
+    return sortedS === sortedT;
 }
 console.log(shortAnagram("cats", "tacs")); //true
 console.log(shortAnagram("tacos", "five")); //false
@@ -169,4 +169,21 @@ console.log(shortAnagram("tacos", "five")); //false
 // Output: true (Backward it is still "racecar")
 // Input: s = "hello"
 // Output: false (Backward it is "olleh", which doesn't match)
-    
+function palindromReview(s) {
+    //for (let i = 0; i < s.length; i++) {
+    //dividing by 2 creates less work ( doesn't compare the same indexes twice)
+    //using Math.floor is more precise
+    for (let i = 0; i < Math.floor(s.length/2); i++) {
+        let j = s.length - 1 - i;
+        if (s[i] !== s[j]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+
+console.log(" Day 2 Palindrom Review Results: ");
+console.log(palindromReview("racecar"));
+console.log(palindromReview("hello")); 
+console.log(palindromReview("apghty"));
