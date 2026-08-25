@@ -48,7 +48,7 @@ public class codingPractice {
                 counts.put(letter, 1); // Set the count to 1
             } else {
                 // To update a value, we use .put() and .get()
-                counts.put(letter, counts.get(letter) + 1); 
+                counts.put(letter, counts.get(letter) + 1);
             }
         }
 
@@ -67,11 +67,37 @@ public class codingPractice {
         return true;
     }
 
+    // Day 2 Palindrom Review:
+    // The Problem
+    // Given a string s, return true if it is a palindrome, and false otherwise.
+    // Examples
+    // Input: s = "racecar"
+    // Output: true (Backward it is still "racecar")
+    // Input: s = "hello"
+    // Output: false (Backward it is "olleh", which doesn't match
+    public static boolean palindromReview(String s) {
+        for (int i = 0; i < s.length(); i++) {
+            int j = s.length() - 1 - i;
+            if (s.charAt(i) != s.charAt(j)) {
+                return false;
+
+            }
+
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         System.out.println("Day one Java:");
-        
+
         // System.out.println is Java's version of console.log
         System.out.println(validAnagram("anagram", "nagaram") ? "TRUE" : "FALSE"); // TRUE
-        System.out.println(validAnagram("rat", "car") ? "TRUE" : "FALSE");         // FALSE
+        System.out.println(validAnagram("rat", "car") ? "TRUE" : "FALSE"); // FALSE
+
+        // day 2
+        System.out.println("Day two Palindrom Review:");
+        System.out.println(palindromReview("racecar") ? "TRUE" : "FALSE"); // TRUE
+        System.out.println(palindromReview("rat") ? "TRUE" : "FALSE"); // FALSE
+
     }
 }
