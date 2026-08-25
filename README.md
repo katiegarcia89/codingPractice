@@ -80,6 +80,7 @@ the corresponding file.
 ```text
 codingPractice/
 ├── README.md
+├── Language_Cheat_Sheet.md
 ├── run-week.sh
 ├── week1/
 │   ├── codingPractice.cpp
