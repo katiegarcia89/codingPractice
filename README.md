@@ -274,6 +274,7 @@ lowercase letters or numbers do not count.
 - Output: `2`
 - Input: `"keep learning every single day"`
 - Output: `0`
+
 ### Week 3 
 
 #### Day 1: Valid Anagram
@@ -301,6 +302,8 @@ each original letter exactly once.
   subtract the corresponding counts while processing `t`. The strings are
   anagrams if they have equal lengths and every final count is zero. This
   approach has a time complexity of `O(n)`.
+
+---
 
   #### Day 2: Palindrom Review
  Given a string s, return true if it is a palindrome, and false otherwise.
