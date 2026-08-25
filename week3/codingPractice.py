@@ -39,7 +39,7 @@ def validAnagram(s, t):
      for j in range(0, len(t)):
          letter = t[j]
          if letter not in counts or counts[letter]==0: 
-             return False; 
+             return False 
          else:
              counts[letter] = counts[letter] -1
              
@@ -48,3 +48,26 @@ def validAnagram(s, t):
 print("Day 1: Valid Anagram: ")
 print(validAnagram("anagram", "nagaram"))# true
 print(validAnagram("rat", "car"))# false
+
+#day 2
+
+# //Day 2 Palindrom Review: 
+# // The Problem
+# // Given a string s, return true if it is a palindrome, and false otherwise.
+# // Examples
+# // Input: s = "racecar"
+# // Output: true (Backward it is still "racecar")
+# // Input: s = "hello"
+# // Output: false (Backward it is "olleh", which doesn't match
+
+def palindromReview(s):
+    for i in range(0, len(s)):
+        j = len(s) -1 - i
+        if s[i] != s[j]:
+            return False
+        
+    return True
+print("Day 2: Palindrom Review Results: ")
+print(palindromReview("racecar"))
+print(palindromReview("hello"))
+    
