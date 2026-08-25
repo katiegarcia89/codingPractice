@@ -101,3 +101,62 @@ function validAnagram3(s, t) {
 console.log("Day 1: Valid Anagram Result (using sorting): ");
 console.log(validAnagram3("anagram", "nagaram")); //true)
 console.log(validAnagram3("rat", "car")); // false)
+
+//Day 1 review 
+// #### Day 1: Valid Anagram
+
+// Given two strings, `s` and `t`, return `true` if `t` is an anagram of `s`.
+// Otherwise, return `false`.
+
+// An anagram is formed by rearranging the letters of another word while using
+// each original letter exactly once.
+
+// **Examples**
+
+// - Input: `s = "anagram"`, `t = "nagaram"`
+// - Output: `true`
+
+// - Input: `s = "rat"`, `t = "car"`
+// - Output: `false`
+
+// **Possible Approaches**
+
+// - **Sorting:** Sort both strings and determine whether the sorted results are
+//   identical. This approach has a time complexity of `O(n log n)`.
+
+// - **Frequency counter:** Count how often each character occurs in `s` and
+//   subtract the corresponding counts while processing `t`. The strings are
+//   anagrams if they have equal lengths and every final count is zero. This
+//   approach has a time complexity of `O(n)`.
+console.log(" Reviewing day 1 ");
+function maybeAnagram(s, t) {
+    if(s.length != t.length){return false;}
+    let counts = {};
+    for (let i = 0; i < s.length; i++) {
+        let letters = s[i];
+        if ((counts[letters]) ===undefined){
+            counts[letters] = 1; 
+        }
+        else {(counts[letters])+=1; }
+    }
+    for(let j = 0 ; j <t.length; t ++){
+        let letters = t[j]; 
+        if ((counts[letters])===undefined || (counts[letters])===0){
+            return false; 
+
+        }
+        counts[letters]--; 
+    }
+    return true; 
+
+}
+console.log(maybeAnagram("cats", "tacs")); //true
+console.log(maybeAnagram("tacos", "five")); //false
+
+function shortAnagram(s,t){
+    let sortedS = s.split('').sort().join('');
+    let sortedT = t.split('').sort().join(''); 
+    return sortedS === sortedT; 
+}
+console.log(shortAnagram("cats", "tacs")); //true
+console.log(shortAnagram("tacos", "five")); //false
