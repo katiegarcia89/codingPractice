@@ -58,7 +58,8 @@ function firstCharacter(word) {
   //count how many times each character appears
   for (let i = 0; i < word.length; i++) {
     const char = word[i];
-    charCount[char] = (charCount[char] || 0) + 1; // if the character does not exist yet, add it to the object
+    // if the character does not exist yet, add it to the object
+    charCount[char] = (charCount[char] || 0) + 1; 
 
   }
   // compare which character is equal to 1
