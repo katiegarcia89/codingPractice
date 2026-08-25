@@ -77,14 +77,37 @@ class Program
 
         return true;
     }
-
+    //Day 2 Palindrom Review: 
+    // The Problem
+    // Given a string s, return true if it is a palindrome, and false otherwise.
+    // Examples
+    // Input: s = "racecar"
+    // Output: true (Backward it is still "racecar")
+    // Input: s = "hello"
+    // Output: false (Backward it is "olleh", which doesn't match
+    public static bool palinromReview(string s)
+    {
+        for (int i = 0; i < s.Length; i++)
+        {
+            int j = s.Length - 1 - i;
+            if (s[i] != s[j])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
     static void Main()
     {
         Console.WriteLine("Day one C#:");
-        
+
         // Ternary operators look exactly like JavaScript and PHP
         Console.WriteLine(ValidAnagram("anagram", "nagaram") ? "TRUE" : "FALSE"); // TRUE
         Console.WriteLine(ValidAnagram("rat", "car") ? "TRUE" : "FALSE");         // FALSE
+                                                                                  //day 2
+        Console.WriteLine("Day 2 : Palindrom Review: Results");
+        Console.WriteLine(palinromReview("racecar") ? "TRUE" : "FALSE"); // TRUE
+        Console.WriteLine(palinromReview("hello") ? "TRUE" : "FALSE");         // FALSE
     }
 }
 
