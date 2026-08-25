@@ -27,7 +27,6 @@
 //   approach has a time complexity of `O(n)`.
 // let counts = {};//reminded myself about global variables
 
-
 #include <iostream>
 #include <string>
 #include <unordered_map>
@@ -73,8 +72,34 @@ bool validAnagram(string s, string t)
     return true;
 }
 
+// Day 2 Palindrom Review:
+//  The Problem
+//  Given a string s, return true if it is a palindrome, and false otherwise.
+//  Examples
+//  Input: s = "racecar"
+//  Output: true (Backward it is still "racecar")
+//  Input: s = "hello"
+//  Output: false (Backward it is "olleh", which doesn't match
+
+bool palindromReview(string s)
+{
+    for (int i = 0; i < s.length(); i++)
+    {
+        int j = s.length() - 1 - i;
+        if (s[i] != s[j])
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
 int main()
 {
     cout << "Day 1: Valid Anagram Results: " << (validAnagram("anagram", "nagaram") ? " TRUE " : "FALSE") << endl; // TRUE
-    cout << (validAnagram("rat", "car") ? "TRUE" : " FALSE ") << endl;                                               // FALSE
+    cout << (validAnagram("rat", "car") ? "TRUE" : " FALSE ") << endl;                                             // FALSE
+
+    // day 2
+    cout << "Day 2: Palindrom Review Results: " << (palindromReview("racecar") ? " TRUE " : "FALSE") << endl; // TRUE
+    cout << (palindromReview("hello") ? "TRUE" : " FALSE ") << endl;                                          // FALSE
 }
