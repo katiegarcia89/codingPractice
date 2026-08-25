@@ -43,7 +43,7 @@ function validAnagram(string $s, string $t): bool
     }
     for ($j = 0; $j < strlen($t); $j++) {
         $letter = $t[$j];
-        if (!isset($counts[$letter])  || $counts[$letter] === 0) {
+        if (!isset($counts[$letter]) || $counts[$letter] === 0) {
             return false;
         } else {
             $counts[$letter] = $counts[$letter] - 1; // Reduce the count by 1
@@ -53,7 +53,32 @@ function validAnagram(string $s, string $t): bool
 
 }
 
-echo "Day one ";
+echo "Day one: Valid Anagram Results: ";
 echo validAnagram("anagram", "nagaram") ? "TRUE " : "FALSE ";//TRUE
 echo validAnagram("rat", "car") ? "TRUE " : "FALSE "; //false
+
+//Day 2 Palindrom Review: 
+// The Problem
+// Given a string s, return true if it is a palindrome, and false otherwise.
+// Examples
+// Input: s = "racecar"
+// Output: true (Backward it is still "racecar")
+// Input: s = "hello"
+// Output: false (Backward it is "olleh", which doesn't match)
+function palindromReview($word)
+{
+    for ($i = 0; $i < strlen($word); $i++) {
+        $j = strlen($word) - 1 - $i;
+        if ($word[$i] !== $word[$j]) {
+            return false;
+        }
+    }
+    return true;
+    
+
+}
+echo "Day two: Palindrom Review: ";
+echo palindromReview("racecar") ? " TRUE" : " FALSE"; // Outputs: TRUE
+echo palindromReview("hello") ? " TRUE" : " FALSE ";   // Outputs: FALSE
+echo palindromReview("apghty") ? " TRUE" : " FALSE "; //false
 ?>
