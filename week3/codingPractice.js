@@ -160,3 +160,13 @@ function shortAnagram(s,t){
 }
 console.log(shortAnagram("cats", "tacs")); //true
 console.log(shortAnagram("tacos", "five")); //false
+
+//Day 2 Palindrom Review: 
+// The Problem
+// Given a string s, return true if it is a palindrome, and false otherwise.
+// Examples
+// Input: s = "racecar"
+// Output: true (Backward it is still "racecar")
+// Input: s = "hello"
+// Output: false (Backward it is "olleh", which doesn't match)
+    

@@ -301,6 +301,31 @@ each original letter exactly once.
   subtract the corresponding counts while processing `t`. The strings are
   anagrams if they have equal lengths and every final count is zero. This
   approach has a time complexity of `O(n)`.
+
+  #### Day 2: Palindrom Review
+ Given a string s, return true if it is a palindrome, and false otherwise.
+ A palindrome is a word that reads the exact same backward as forward (ignoring spaces, punctuation, and capitalization—though for this basic version, we will assume the input is already lowercase and has no spaces).
+
+ **Examples**
+
+- Input: s = "racecar"
+- Output: true 
+- Input: s = "hello"
+- Output: false 
+
+**Possible Approaches**
+
+ **The Reverse Shortcut:** (Like your .split().reverse().join())Flip the entire string backward using language shortcuts, and check if the reversed string matches the original string exactly.
+ - Pros: Very few lines of code.
+ - Cons: Takes up extra memory because you have to create a whole new reversed string/array.
+ 
+**The Two-Pointer Method** (Optimal)Instead of copying or reversing anything, you use two index counters at the same time:
+Pointer i starts at the very beginning (index 0) and moves forward (i++).
+Pointer j starts at the very end (index length - 1) and moves backward (j--).
+You run a loop where you compare s[i] and s[j]. 
+If they ever don't match, you instantly return false. 
+If i and j meet in the middle and every letter matched, you return true.
+
 ## Skills Practiced
 
 - Algorithmic problem-solving
