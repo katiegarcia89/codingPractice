@@ -71,3 +71,28 @@ print("Day 2: Palindrom Review Results: ")
 print(palindromReview("racecar"))
 print(palindromReview("hello"))
     
+#     //day 3
+
+# //day 3: Find the Highest and Lowest Number
+
+# //  Given an array (or list) of numbers, write a function that returns both the highest and the lowest numbers found in that array.
+
+# //  ExamplesInput: nums = [3, 5, 1, 9, 2]
+# //  Output: Highest: 9, Lowest: 1
+# //  Input: nums = [-4, 0, 15, -12]
+# //  Output: Highest: 15, Lowest: -12
+def minMax(nums):
+    minNum, maxNum = nums[0], nums[0]
+    for i in range(0, len(nums)):
+        if(nums[i] > maxNum):
+#space on second if was inside first if so min was continuously incorrect
+            maxNum = nums[i]
+        if(nums[i] < minNum):
+                minNum = nums[i]
+                
+    return [maxNum, minNum]
+print("Day 3: Highest and Lowest Number: Result"); 
+print(minMax([3, 5, 1, 9, 2]))
+print(minMax([-4, 0, 15, -12]))
+            
+        

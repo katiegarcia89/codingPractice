@@ -173,7 +173,7 @@ function palindromReview(s) {
     //for (let i = 0; i < s.length; i++) {
     //dividing by 2 creates less work ( doesn't compare the same indexes twice)
     //using Math.floor is more precise
-    for (let i = 0; i < Math.floor(s.length/2); i++) {
+    for (let i = 0; i < Math.floor(s.length / 2); i++) {
         let j = s.length - 1 - i;
         if (s[i] !== s[j]) {
             return false;
@@ -185,5 +185,50 @@ function palindromReview(s) {
 
 console.log(" Day 2 Palindrom Review Results: ");
 console.log(palindromReview("racecar"));
-console.log(palindromReview("hello")); 
+console.log(palindromReview("hello"));
 console.log(palindromReview("apghty"));
+
+//day 3 reviewing palindrom
+
+function reviewReviewPalinfrom(s) {
+    for (let i = 0; i < s.length; i++) {
+        let j = s.length - 1 - i;
+        if (s[i] === s[j]) {
+            return true;
+        }
+    }
+    return false;
+}
+
+console.log("Day 3 review, review Palindrom Results: ");
+console.log(palindromReview("racecar"));
+console.log(palindromReview("hello"));
+console.log(palindromReview("apghty"));
+
+//day 3: Find the Highest and Lowest Number
+
+//  Given an array (or list) of numbers, write a function that returns both the highest and the lowest numbers found in that array.
+
+//  ExamplesInput: nums = [3, 5, 1, 9, 2]
+//  Output: Highest: 9, Lowest: 1
+//  Input: nums = [-4, 0, 15, -12]
+//  Output: Highest: 15, Lowest: -12
+
+function minMax(nums) {
+    let minNum = nums[0];
+    let maxNum = nums[0];
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] > maxNum) {
+            maxNum = nums[i];
+        }
+        else if (nums[i] < minNum) {
+            minNum = nums[i];
+        }
+    }
+    //issue I had was not having the return within brackets, and therefore... continuously getting the max number as the result.
+    return [minNum, maxNum];
+}
+
+console.log("Day 3: Highest and Lowest Number Results");
+console.log(minMax([3, 5, 1, 9, 2])); //9, 1
+console.log(minMax([-4, 0, 15, -12])); //-12, 15

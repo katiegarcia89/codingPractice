@@ -74,11 +74,48 @@ function palindromReview($word)
         }
     }
     return true;
-    
+
 
 }
 echo "Day two: Palindrom Review: ";
 echo palindromReview("racecar") ? " TRUE" : " FALSE"; // Outputs: TRUE
 echo palindromReview("hello") ? " TRUE" : " FALSE ";   // Outputs: FALSE
 echo palindromReview("apghty") ? " TRUE" : " FALSE "; //false
+
+
+//day 3
+
+//day 3: Find the Highest and Lowest Number
+
+//  Given an array (or list) of numbers, write a function that returns both the highest and the lowest numbers found in that array.
+
+//  ExamplesInput: nums = [3, 5, 1, 9, 2]
+//  Output: Highest: 9, Lowest: 1
+//  Input: nums = [-4, 0, 15, -12]
+//  Output: Highest: 15, Lowest: -12
+
+function minMax($nums)
+{
+    $minNum = $nums[0];
+    $maxNum = $nums[0];
+    for ($i = 0; $i < count($nums); $i++) {
+        if ($nums[$i] > $maxNum) {
+            $maxNum = $nums[$i];
+        } else if ($nums[$i] < $minNum) {
+            $minNum = $nums[$i];
+        }
+    }
+    return [$maxNum, $minNum];
+}
+echo "Day three: Highest and Lowest Number Results: ";
+
+// Pass the function call directly into implode!
+//echo implode(" ", minMax([3, 5, 1, 9, 2])) . "\n";
+//echo implode(" ", minMax([-4, 0, 15, -12])) . "\n";
+//use print_r() for non strings... forgot
+
+print_r(minMax([3, 5, 1, 9, 2]));
+print_r(minMax([-4, 0, 15, -12]));
+
+
 ?>

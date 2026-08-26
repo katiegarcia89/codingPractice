@@ -1,4 +1,4 @@
-
+import java.util.Arrays; //for day 3
 // #### Day 1: Valid Anagram
 
 // Given two strings, `s` and `t`, return `true` if `t` is an anagram of `s`.
@@ -86,18 +86,48 @@ public class codingPractice {
         }
         return true;
     }
+    // day 3: Find the Highest and Lowest Number
 
-    public static void main(String[] args) {
-        System.out.println("Day one Java:");
+    // Given an array (or list) of numbers, write a function that returns both the
+    // highest and the lowest numbers found in that array.
 
-        // System.out.println is Java's version of console.log
-        System.out.println(validAnagram("anagram", "nagaram") ? "TRUE" : "FALSE"); // TRUE
-        System.out.println(validAnagram("rat", "car") ? "TRUE" : "FALSE"); // FALSE
+    // ExamplesInput: nums = [3, 5, 1, 9, 2]
+    // Output: Highest: 9, Lowest: 1
+    // Input: nums = [-4, 0, 15, -12]
+    // Output: Highest: 15, Lowest: -12
 
-        // day 2
-        System.out.println("Day two Palindrom Review:");
-        System.out.println(palindromReview("racecar") ? "TRUE" : "FALSE"); // TRUE
-        System.out.println(palindromReview("rat") ? "TRUE" : "FALSE"); // FALSE
+    public static int[] minMax(int[] nums) {
+        // ADD import java.util.Arrays;
+        int minNum = nums[0];
+        int maxNum = nums[0];
+        // array... so no .length()
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] > maxNum) {
+                maxNum = nums[i];
+            }
+            if (nums[i] < minNum) {
+                minNum = nums[i];
+            }
+        }
+        return new int[] { minNum, maxNum };
 
     }
+
+public static void main(String[] args) {
+        System.out.println("Day one Java:");
+        System.out.println(validAnagram("anagram", "nagaram") ? "TRUE" : "FALSE"); 
+        System.out.println(validAnagram("rat", "car") ? "TRUE" : "FALSE"); 
+
+        System.out.println("Day two Palindrom Review:");
+        System.out.println(palindromReview("racecar") ? "TRUE" : "FALSE"); 
+        System.out.println(palindromReview("rat") ? "TRUE" : "FALSE"); 
+
+        System.out.println("Day 3: Highest and Lowest Number: Results");
+        int[] result1 = minMax(new int[] { 2, 7, 11, 15 });
+        System.out.println("Min: " + result1[0] + " Max: " + result1[1]);
+
+        int[] result2 = minMax(new int[] {4, 0, 15, -12});
+        System.out.println("Min: " + result2[0] + " Max: " + result2[1]);
+    }
+
 }

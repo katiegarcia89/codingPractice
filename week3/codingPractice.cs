@@ -97,6 +97,34 @@ class Program
         }
         return true;
     }
+
+    // day 3: Find the Highest and Lowest Number
+
+    // Given an array (or list) of numbers, write a function that returns both the
+    // highest and the lowest numbers found in that array.
+
+    // ExamplesInput: nums = [3, 5, 1, 9, 2]
+    // Output: Highest: 9, Lowest: 1
+    // Input: nums = [-4, 0, 15, -12]
+    // Output: Highest: 15, Lowest: -12
+
+    public static int[] minMax(int[] nums)
+    {
+        int minNum = nums[0];
+        int maxNum = nums[0];
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] > maxNum)
+            {
+                maxNum = nums[i];
+            }
+            if (nums[i] < minNum)
+            {
+                minNum = nums[i];
+            }
+        }
+        return new int[] { maxNum, minNum };
+    }
     static void Main()
     {
         Console.WriteLine("Day one C#:");
@@ -108,6 +136,13 @@ class Program
         Console.WriteLine("Day 2 : Palindrom Review: Results");
         Console.WriteLine(palinromReview("racecar") ? "TRUE" : "FALSE"); // TRUE
         Console.WriteLine(palinromReview("hello") ? "TRUE" : "FALSE");         // FALSE
+
+        Console.WriteLine("Day 3: Highest and Lowest Number: Results"); 
+        int[] result1 = minMax(new int[] { 2, 7, 11, 15 }); 
+        Console.WriteLine("Min: " + result1[0] + " Max: " + result1[1]);
+        int[] result2 = minMax(new int[] {4, 0, 15, -12}); 
+        Console.WriteLine("Min: " + result2[0] + " Max: " + result2[1]);
+
     }
 }
 

@@ -330,6 +330,35 @@ You run a loop where you compare s[i] and s[j].
 If they ever don't match, you instantly return false. 
 If i and j meet in the middle and every letter matched, you return true.
 
+---
+
+ #### Day 3: Find the Highest and Lowest Number
+
+ Given an array (or list) of numbers, write a function that returns both the highest and the lowest numbers found in that array.
+ 
+ ExamplesInput: nums = [3, 5, 1, 9, 2]
+ Output: Highest: 9, Lowest: 1
+ Input: nums = [-4, 0, 15, -12]
+ Output: Highest: 15, Lowest: -12
+ 
+ How to Solve It
+ Approach 1: The Sorting Shortcut
+ f you sort the array from lowest to highest first, the lowest number will automatically be at index 0, and the highest number will be at the very last index.
+ The Catch: As you learned on Day 1, sorting takes extra time (\(O(n \log n)\)). 
+ Interviewers will immediately ask you to do it in one pass without sorting.
+
+ Approach 2: The Tracker Method (Optimal One-Pass)Create two tracker variables: maxNum and minNum.
+ Initialize both of them to the very first number in the array (nums[0]).
+ Loop through the rest of the array starting at index 1.
+ On every step, ask two questions:
+ Is the current number bigger than my maxNum? 
+ If yes, update maxNum.
+ Is the current number smaller than my minNum? 
+ If yes, update minNum.
+ Return both values after the loop finishes. 
+ This runs in fast O(n) time.
+
+
 ## Skills Practiced
 
 - Algorithmic problem-solving
